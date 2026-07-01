@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dashper's log</title>
+<style>
+  :root {
+    --text: #e8e8e6;
+    --bg: #0d0d0d;
+    --bg-raised: #151515;
+    --link: #ffffff;
+    --visited: #9a9a9a;
+    --rule: #262626;
+    --meta: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "JetBrains Mono", "Courier New", monospace;
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 18px;
+    margin-bottom: 40px;
+  }
+  header h1 {
+    font-size: 1.4em;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+  }
+  header h1 .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1em;
+    background: var(--text);
+    margin-left: 6px;
+    vertical-align: middle;
+    animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  header p {
+    margin: 0;
+    color: var(--meta);
+    font-size: 0.85em;
+  }
+  nav {
+    margin-bottom: 44px;
+    font-size: 0.82em;
+  }
+  nav a {
+    margin-right: 20px;
+    color: var(--meta);
+    text-decoration: none;
+  }
+  nav a:hover { color: var(--text); }
+  nav a::before { content: "/"; margin-right: 4px; opacity: 0.5; }
+
+  .post {
+    margin-bottom: 8px;
+    padding: 18px 20px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--bg-raised);
+    margin-bottom: 20px;
+    transition: border-color 0.15s ease;
+  }
+  .post:hover { border-color: #3a3a3a; }
+  .post h2 {
+    font-size: 1em;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+  }
+  .post h2 a { color: var(--link); text-decoration: none; }
+  .post h2 a:hover { text-decoration: underline; }
+  .post-meta {
+    font-size: 0.72em;
+    color: var(--meta);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  .post p {
+    margin: 0;
+    color: #b8b8b6;
+    font-size: 0.92em;
+    line-height: 1.65;
+  }
+
+  a { color: var(--link); }
+  a:visited { color: var(--visited); }
+
+  footer {
+    margin-top: 50px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.72em;
+    color: var(--meta);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>dashper@log<span class="cursor"></span></h1>
+  <p>notes on code, systems, and whatever else is loud enough to write down</p>
+</header>
+
+<nav>
+  <a href="index.html">home</a>
+  <a href="#">archive</a>
+  <a href="#">about</a>
+</nav>
+
+<main>
+  <article class="post">
+    <h2><a href="posts/first-post.html">Hello, world (again)</a></h2>
+    <div class="post-meta">2026-07-01</div>
+    <p>
+      First post. No CMS, no framework, no build step — just HTML I write by hand
+      and push to GitHub Pages. That's the whole system. More coming when there's
+      something worth saying.
+    </p>
+  </article>
+</main>
+
+<footer>
+  built with plain html — no js, no tracking, no cms
+</footer>
+
+</body>
+</html>
