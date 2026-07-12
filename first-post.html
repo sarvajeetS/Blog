@@ -62,6 +62,28 @@
     font-size: 0.72em;
     color: var(--meta);
   }
+  form {
+    margin-bottom: 30px;
+    padding: 16px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: var(--bg-raised);
+  }
+  input, textarea, button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+  }
+  button {
+    cursor: pointer;
+    background: white;
+    color: black;
+  }
 </style>
 </head>
 <body>
@@ -70,18 +92,50 @@
   <a href="../index.html">&larr; back</a>
 </nav>
 
-<h1 class="title">Hello, world (again)</h1>
-<div class="post-meta">2026-07-01</div>
+<form id="postForm">
+  <input type="text" id="titleInput" placeholder="Post title" required>
+  <input type="date" id="dateInput" required>
+  <textarea id="contentInput" rows="5" placeholder="Write your post..." required></textarea>
+  <button type="submit">Post</button>
+</form>
 
-<p>
-  First post. No CMS, no framework, no build step — just HTML I write by hand
-  and push to GitHub Pages. That's the whole system. More coming when there's
-  something worth saying.
-</p>
+<div id="posts"></div>
 
 <footer>
   built with plain html — no js, no tracking, no cms
 </footer>
+
+<script>
+  function createPost(title, date, content) {
+    const posts = document.getElementById('posts');
+    const article = document.createElement('article');
+
+    article.innerHTML = `
+      <h1 class="title">${title}</h1>
+      <div class="post-meta">${date}</div>
+      <p>${content}</p>
+    `;
+
+    posts.appendChild(article);
+  }
+
+  document.getElementById('postForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const title = document.getElementById('titleInput').value;
+    const date = document.getElementById('dateInput').value;
+    const content = document.getElementById('contentInput').value;
+
+    createPost(title, date, content);
+    this.reset();
+  });
+
+  createPost(
+    'Hello, world (again)',
+    '2026-07-01',
+    'First post. No CMS, no framework, no build step — just HTML I write by hand and push to GitHub Pages. That\'s the whole system. More coming when there\'s something worth saying.'
+  );
+</script>
 
 </body>
 </html>
