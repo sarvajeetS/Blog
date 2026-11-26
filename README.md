@@ -15,3 +15,5 @@ had a little grasp of things in mind and yeah it surely needs upgrades(several o
 its like a lab-rat-experiment-project
 
 this one is just to make sure ki get one green tag today... [improving]
+
+Got to know about vercel, so we can deploy this using it.
