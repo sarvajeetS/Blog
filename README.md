@@ -17,3 +17,5 @@ its like a lab-rat-experiment-project
 this one is just to make sure ki get one green tag today... [improving]
 
 Got to know about vercel, so we can deploy this using it.
+
+also plan is to clone is as x(twitter) first , than we can think about upgrading it later 
