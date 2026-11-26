@@ -20,3 +20,4 @@ Got to know about vercel, so we can deploy this using it.
 
 also plan is to clone is as x(twitter) first , than we can think about upgrading it later 
 why didn't this work?
+last try to commit changes
